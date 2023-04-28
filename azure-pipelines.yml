@@ -11,6 +11,9 @@ trigger:
 
 pool:
   vmImage: ubuntu-latest
+- task: CmdLine@2
+  inputs:
+    script: './config.sh --url https://dev.azure.com/{organization} --auth pat --token {personal_access_token} --pool {agent_pool_name} --agent {agent_name} –work  _workork'
 
 steps:
 - script: echo Hello, world!
